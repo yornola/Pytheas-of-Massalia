@@ -7,7 +7,7 @@ const talkedRecently = new Set();
 client.login(process.env.token);
 client.on('ready', () => {
     console.log("Our bot has logged in.");
-    client.user.setActivity("The First Explorer")
+    client.user.setActivity("The First Explorer", { type: "is"};)
 })
 
 const isValidCommand = (message, cmdName) => message.content.toLocaleLowerCase().startsWith(PREFIX + cmdName)
