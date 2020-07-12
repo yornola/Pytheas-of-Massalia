@@ -1,3 +1,4 @@
+require('dotenv').config();
 const discord = require('discord.js');
 const client = new discord.Client();
 const config = require("./config/config.json");
@@ -12,7 +13,8 @@ client.on('ready', () => {
 const isValidCommand = (message, cmdName) => message.content.toLocaleLowerCase().startsWith(PREFIX + cmdName)
 client.on('message', function(message) {
     console.log(message.content);
-    if(message.author.bot) return; {
+    if(message.author.bot) 
+    return; {
 // command for !eu4, only in specified channel (gamecalls), 1 use every minute
         if(isValidCommand(message, "eu4")) {
             if(message.channel.id != '730838097146937367') {
