@@ -3,7 +3,7 @@ const discord = require('discord.js');
 const client = new discord.Client();
 const PREFIX = process.env.PREFIX;
 const talkedRecently = new Set();
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.token);
 client.on('ready', () => {
     console.log("Our bot has logged in.");
     client.user.setActivity("The First Explorer")
