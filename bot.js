@@ -1,6 +1,6 @@
-require('dotenv').config();
 const discord = require('discord.js');
 const client = new discord.Client();
+const config = require("./config/config.json");
 const PREFIX = process.env.PREFIX;
 const talkedRecently = new Set();
 client.login(process.env.token);
