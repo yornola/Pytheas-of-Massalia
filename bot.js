@@ -24,7 +24,7 @@ client.on('message', function(message) {
                     message.channel.send("Please, don't spam the commands " + `<@${message.author.id}>`+". You have to wait 1 more minute to use this command again.");
                     message.delete()
                     } else {
-                        message.channel.send(`[Looking for <@&730140518436044912> players]`+" "+ `<@${message.author.id}>` + " " +"wants to play Europa Universalis IV, go into the voice lobby to join them!");
+                        message.channel.send(`[Looking for <@&732274986311745637> players]`+" "+ `<@${message.author.id}>` + " " +"wants to play Europa Universalis IV, go into the voice lobby to join them!");
                         message.delete();}
                         talkedRecently.add(message.author.id);
                         setTimeout(() => {
@@ -42,7 +42,7 @@ client.on('message', function(message) {
                     message.channel.send("Please, don't spam the commands " + `<@${message.author.id}>`+". You have to wait 1 more minute to use this command again.");
                     message.delete()
                     } else {
-                        message.channel.send(`[Looking for <@&730140539621605450> players]`+" "+ `<@${message.author.id}>` + " " +"wants to play Crusader Kings III, go into the voice lobby to join them!");
+                        message.channel.send(`[Looking for <@&732275122420842506> players]`+" "+ `<@${message.author.id}>` + " " +"wants to play Crusader Kings III, go into the voice lobby to join them!");
                         message.delete();}
                         talkedRecently.add(message.author.id);
                         setTimeout(() => {
@@ -60,7 +60,7 @@ client.on('message', function(message) {
                     message.channel.send("Please, don't spam the commands " + `<@${message.author.id}>`+". You have to wait 1 more minute to use this command again.");
                     message.delete()
                     } else {
-                        message.channel.send(`[Looking for <@&730140495795191950> players]`+" "+ `<@${message.author.id}>` + " " +"wants to play Hearts of Iron IV, go into the voice lobby to join them!");
+                        message.channel.send(`[Looking for <@&732275160647860294> players]`+" "+ `<@${message.author.id}>` + " " +"wants to play Hearts of Iron IV, go into the voice lobby to join them!");
                         message.delete();}
                         talkedRecently.add(message.author.id);
                         setTimeout(() => {
