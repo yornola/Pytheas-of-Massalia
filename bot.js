@@ -13,10 +13,7 @@ client.on('ready', () => {
 const isValidCommand = (message, cmdName) => message.content.toLocaleLowerCase().startsWith(PREFIX + cmdName)
 client.on('message', function(message) {
     if(message.author.bot) 
-    return; {
-        if(isValidCommand(message, "hello")) {
-            message.channel.send("Hello "+`<@${message.author.id}>`+"!")
-        }        
+    return; {       
 // command for !eu4, only in specified channel (gamecalls), 1 use every minute
         if(isValidCommand(message, "eu4")) {
             if(message.channel.id != '730922699844747355') {
