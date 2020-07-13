@@ -12,13 +12,12 @@ client.on('ready', () => {
 
 const isValidCommand = (message, cmdName) => message.content.toLocaleLowerCase().startsWith(PREFIX + cmdName)
 client.on('message', function(message) {
-    console.log(message.content);
     if(message.author.bot) 
     return; {
 // command for !eu4, only in specified channel (gamecalls), 1 use every minute
         if(isValidCommand(message, "eu4")) {
-            if(message.channel.id != '730838097146937367') {
-            message.channel.send('Cannot use that command here, go to' + `<#730838097146937367>` + " -" + `<@${message.author.id}>`);
+            if(message.channel.id != '730922699844747355') {
+            message.channel.send('Cannot use that command here, go to' + `<#730922699844747355>` + " -" + `<@${message.author.id}>`);
             message.delete()
             } else { 
                 if (talkedRecently.has(message.author.id)) {
@@ -35,8 +34,8 @@ client.on('message', function(message) {
         }
 // command for !ck3, only in specified channel (gamecalls), 1 use every minute
         if(isValidCommand(message, "ck3")) {
-            if(message.channel.id != '730838097146937367') {
-            message.channel.send('Cannot use that command here, go to' + `<#730838097146937367>` + " -" + `<@${message.author.id}>`);
+            if(message.channel.id != '730922699844747355') {
+            message.channel.send('Cannot use that command here, go to' + `<#730922699844747355>` + " -" + `<@${message.author.id}>`);
             message.delete()
             } else { 
                 if (talkedRecently.has(message.author.id)) {
@@ -53,8 +52,8 @@ client.on('message', function(message) {
         }            
 // command for !hoi4, only in specified channel (gamecalls), 1 use every minute            
         if(isValidCommand(message, "hoi4")) {
-            if(message.channel.id != '730838097146937367') {
-            message.channel.send('Cannot use that command here, go to' + `<#730838097146937367>` + " -" + `<@${message.author.id}>`);
+            if(message.channel.id != '730922699844747355') {
+            message.channel.send('Cannot use that command here, go to' + `<#730922699844747355>` + " -" + `<@${message.author.id}>`);
             message.delete()
             } else { 
                 if (talkedRecently.has(message.author.id)) {
