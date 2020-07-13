@@ -67,8 +67,44 @@ client.on('message', function(message) {
                             talkedRecently.delete(message.author.id);
                             }, 60000); 
                     }
-            
         }
-// command for !...., only in specified channel (gamecalls), 1 use every minute
+// command for !stl, only in specified channel (gamecalls), 1 use every minute
+        if(isValidCommand(message, "stl")) {
+            if(message.channel.id != '730922699844747355') {
+            message.channel.send('Cannot use that command here, go to' + `<#730922699844747355>` + " -" + `<@${message.author.id}>`);
+            message.delete()
+            } else { 
+                if (talkedRecently.has(message.author.id)) {
+                    message.channel.send("Please, don't spam the commands " + `<@${message.author.id}>`+". You have to wait 1 minute to use this command again.");
+                    message.delete()
+                    } else {
+                        message.channel.send(`[Looking for <@&732275209557639288> players]`+" "+ `<@${message.author.id}>` + " " +"wants to play Stellaris, go into the voice lobby to join them!");
+                        message.delete();}
+                        talkedRecently.add(message.author.id);
+                        setTimeout(() => {
+                            talkedRecently.delete(message.author.id);
+                            }, 60000); 
+                    }
+        }
+// command for !imp, only in specified channel (gamecalls), 1 use every minute
+        if(isValidCommand(message, "imp")) {
+            if(message.channel.id != '730922699844747355') {
+            message.channel.send('Cannot use that command here, go to' + `<#730922699844747355>` + " -" + `<@${message.author.id}>`);
+            message.delete()
+            } else { 
+                if (talkedRecently.has(message.author.id)) {
+                    message.channel.send("Please, don't spam the commands " + `<@${message.author.id}>`+". You have to wait 1 minute to use this command again.");
+                    message.delete()
+                    } else {
+                        message.channel.send(`[Looking for <@&732275274854694942> players]`+" "+ `<@${message.author.id}>` + " " +"wants to play Imperator:Rome, go into the voice lobby to join them!");
+                        message.delete();}
+                        talkedRecently.add(message.author.id);
+                        setTimeout(() => {
+                            talkedRecently.delete(message.author.id);
+                            }, 60000); 
+                    }
+        }        
+// end of retun
     }
+// end of commands
 });
