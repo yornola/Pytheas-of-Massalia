@@ -104,7 +104,56 @@ client.on('message', function(message) {
                             }, 60000); 
                     }
         }        
+        // command for !games, get role via reaction
+        let messageArray = message.content.split(" ");
+        let command = messageArray[0]; 
+        if(isValidCommand(message, "games")) { 
+            message.delete()
+            let embed = new discord.MessageEmbed()
+            .setTitle('Gameroles \n React with an emoji to get the role for a specified game. You will be notified whenever somebody wants to play this game!')
+            .setDescription('<:eu4:729747365824823316> Europa Universalis IV \n <:ck3:729802984300478525> Crusader Kings III \n <:hoi4:729790000538976268> Hearts of Iron IV \n <:stellaris:730193808385376290> Stellaris \n <:imp:730194012467888149> Imperator:Rome ')
+            .setColor('BLUE')
+            let MessageEmbed = message.channel.send(embed)
+            .then(message => {message.react('729747365824823316').then(() => message.react('729802984300478525')).then(() => message.react('729790000538976268')).then(() => message.react('730193808385376290')).then(() => message.react('730194012467888149'))});
+}    
 // end of retun
-    }
+}
 // end of commands
 });
+
+//give role via reaction
+client.on('messageReactionAdd', async (reaction, user) => {
+if (reaction.message.partial) await reaction.message.fetch();
+if (reaction.partial) await reaction.fetch();
+if (user.bot) return;
+if (!reaction.message.guild) return;
+if (reaction.message.channel.id === "732645935930278049") {
+if (reaction.emoji.id === '732340930140569715'){
+    await reaction.message.guild.members.cache.get(user.id).roles.add("732637333039612316");
+}
+if (reaction.emoji.id === '732340928907313183'){
+    await reaction.message.guild.members.cache.get(user.id).roles.add("732637269806284900");
+}
+if (reaction.emoji.id === '732340928173309994'){
+    await reaction.message.guild.members.cache.get(user.id).roles.add("732637303465574493");
+}
+}
+})
+//remove role via reaction
+client.on('messageReactionRemove', async (reaction, user) => {
+if (reaction.message.partial) await reaction.message.fetch();
+if (reaction.partial) await reaction.fetch();
+if (user.bot) return;
+if (!reaction.message.guild) return;
+if (reaction.message.channel.id === "732645935930278049") {
+if (reaction.emoji.id === '732340930140569715'){
+    await reaction.message.guild.members.cache.get(user.id).roles.remove("732637333039612316")
+}
+if (reaction.emoji.id === '732340928907313183'){
+    await reaction.message.guild.members.cache.get(user.id).roles.remove("732637269806284900");
+}        
+if (reaction.emoji.id === '732340928173309994'){
+    await reaction.message.guild.members.cache.get(user.id).roles.remove("732637303465574493");
+}
+}
+})
