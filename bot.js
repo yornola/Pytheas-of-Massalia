@@ -147,19 +147,25 @@ if (reaction.message.channel.id === "730922895148187679") {
 })
 //remove role via reaction
 client.on('messageReactionRemove', async (reaction, user) => {
-if (reaction.message.partial) await reaction.message.fetch();
-if (reaction.partial) await reaction.fetch();
-if (user.bot) return;
-if (!reaction.message.guild) return;
-if (reaction.message.channel.id === "732645935930278049") {
-if (reaction.emoji.id === '732340930140569715'){
-    await reaction.message.guild.members.cache.get(user.id).roles.remove("732637333039612316")
-}
-if (reaction.emoji.id === '732340928907313183'){
-    await reaction.message.guild.members.cache.get(user.id).roles.remove("732637269806284900");
-}        
-if (reaction.emoji.id === '732340928173309994'){
-    await reaction.message.guild.members.cache.get(user.id).roles.remove("732637303465574493");
-}
+    if (reaction.message.partial) await reaction.message.fetch();
+    if (reaction.partial) await reaction.fetch();
+    if (user.bot) return;
+    if (!reaction.message.guild) return;
+    if (reaction.message.channel.id === "730922895148187679") {
+        if (reaction.emoji.id === '729747365824823316'){
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("732274986311745637");
+        }
+        if (reaction.emoji.id === '729802984300478525'){
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("732275122420842506");
+        }
+        if (reaction.emoji.id === '729790000538976268'){
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("732275160647860294");
+        }
+        if (reaction.emoji.id === '730193808385376290'){
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("732275209557639288");
+        }
+        if (reaction.emoji.id === '730194012467888149'){
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("732275274854694942");
+        }
 }
 })
