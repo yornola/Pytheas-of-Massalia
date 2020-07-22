@@ -129,7 +129,6 @@ client.on('message', function(message) {
 }
 // end of commands
 });
-
 //give role via reaction
 client.on('messageReactionAdd', async (reaction, user) => {
     if (reaction.message.partial) await reaction.message.fetch();
@@ -161,14 +160,20 @@ client.on('messageReactionAdd', async (reaction, user) => {
         }
     }
 })
-
 //remove role via reaction
 client.on('messageReactionRemove', async (reaction, user) => {
     if (reaction.message.partial) await reaction.message.fetch();
     if (reaction.partial) await reaction.fetch();
     if (user.bot) return;
     if (!reaction.message.guild) return;
+    if (reaction.message.channel.id === "729830743261446284") {
+        console.log('channel remove')
+        if (reaction.emoji.id === '735629633638105189'){
+            console.log('emoji remove')
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("729980664807424040");
+        }}
     if (reaction.message.channel.id === "730922895148187679") {
+        console.log('channel server commands remove')
         if (reaction.emoji.id === '729747365824823316'){
             await reaction.message.guild.members.cache.get(user.id).roles.remove("732274986311745637");
         }
@@ -184,5 +189,5 @@ client.on('messageReactionRemove', async (reaction, user) => {
         if (reaction.emoji.id === '730194012467888149'){
             await reaction.message.guild.members.cache.get(user.id).roles.remove("732275274854694942");
         }
-}
+    }
 })
