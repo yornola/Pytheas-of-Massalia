@@ -152,11 +152,16 @@ if (reaction.message.channel.id === "730922895148187679") {
     if (reaction.emoji.id === '730194012467888149'){
         await reaction.message.guild.members.cache.get(user.id).roles.add("732275274854694942");
     }
-}
-if (reaction.message.channel.id === "729830743261446284") {
-    if (reaction.emoji.id === '✅'){
-        await reaction.message.guild.members.cache.get(user.id).roles.add("729980664807424040");
-    }}
+}})
+client.on('messageReactionAdd', async (reaction, user) => {
+    if (reaction.message.partial) await reaction.message.fetch();
+    if (reaction.partial) await reaction.fetch();
+    if (user.bot) return;
+    if (!reaction.message.guild) return;
+    if (reaction.message.channel.id === "729830743261446284") {
+        if (reaction.emoji.id === '✅'){
+            await reaction.message.guild.members.cache.get(user.id).roles.add("729980664807424040");
+        }}
 })
 //remove role via reaction
 client.on('messageReactionRemove', async (reaction, user) => {
