@@ -123,7 +123,7 @@ client.on('message', function(message) {
         .setDescription('Welcome to the **Strategists of Paradoxia** discord server! \n \n We play various games depending on our mood, but mostly games developed by *Paradox* such as: EU4, CK3, HOI4, etc. Or any other strategy game that exists in this universe. \n \n ***RULES*** \n ===== \n- Have respect for your fellow gamers.\n- Feel free to ask questions in the general chat or in the game chat if it’s related to that specific game.\n- Enjoy yourself and have a great time. \n \n - Feel free to use the music bot as long if it’s not ear-rape.\n - Be friendly towards others.\n - In-game rules needs to be discussed with the group you’re playing with.\n \n - Do **NOT** post explicit content, such as porn, insane racism, or gore.\n- Do **NOT** use any other language than English.\n- Do **NOT** advertise.\n- Do **NOT** argue with staff members regarding the rules. Their word is law!\n \n \n__*Every violation against these rules can result in a kick, temp ban or ban.*__\n \n \nIn this server we work with our own bot, made by one of our Generals. The bot, @Pytheas of Massalia#0034 works with emoji reactions. Press the correct emoji’s to get a role for a specific game or to agree to a certain message.')
         .setColor('BLUE')
         let MessageEmbed = message.channel.send(embed)
-        .then(message => {message.react('735619183621963838')});
+        .then(message => {message.react('✅')});
 }   
 // end of retun
 }
@@ -154,7 +154,7 @@ if (reaction.message.channel.id === "730922895148187679") {
     }
 }
 if (reaction.message.channel.id === "729830743261446284") {
-    if (reaction.emoji.id === '735619183621963838'){
+    if (reaction.emoji.id === '✅'){
         await reaction.message.guild.members.cache.get(user.id).roles.add("729980664807424040");
     }}
 })
