@@ -142,30 +142,25 @@ client.on('messageReactionAdd', async (reaction, user) => {
             console.log('emoji')
             await reaction.message.guild.members.cache.get(user.id).roles.add("729980664807424040");
         }}
+    if (reaction.message.channel.id === "730922895148187679") {
+        console.log('channel server commands')
+        if (reaction.emoji.id === '729747365824823316'){
+            await reaction.message.guild.members.cache.get(user.id).roles.add("732274986311745637");
+        }
+        if (reaction.emoji.id === '729802984300478525'){
+            await reaction.message.guild.members.cache.get(user.id).roles.add("732275122420842506");
+        }
+        if (reaction.emoji.id === '729790000538976268'){
+            await reaction.message.guild.members.cache.get(user.id).roles.add("732275160647860294");
+        }
+        if (reaction.emoji.id === '730193808385376290'){
+            await reaction.message.guild.members.cache.get(user.id).roles.add("732275209557639288");
+        }
+        if (reaction.emoji.id === '730194012467888149'){
+            await reaction.message.guild.members.cache.get(user.id).roles.add("732275274854694942");
+        }
+    }
 })
-client.on('messageReactionAdd', async (reaction, user) => {
-if (reaction.message.partial) await reaction.message.fetch();
-if (reaction.partial) await reaction.fetch();
-if (user.bot) return;
-if (!reaction.message.guild) return;
-if (reaction.message.channel.id === "730922895148187679") {
-    console.log('channel server commands')
-    if (reaction.emoji.id === '729747365824823316'){
-        await reaction.message.guild.members.cache.get(user.id).roles.add("732274986311745637");
-    }
-    if (reaction.emoji.id === '729802984300478525'){
-        await reaction.message.guild.members.cache.get(user.id).roles.add("732275122420842506");
-    }
-    if (reaction.emoji.id === '729790000538976268'){
-        await reaction.message.guild.members.cache.get(user.id).roles.add("732275160647860294");
-    }
-    if (reaction.emoji.id === '730193808385376290'){
-        await reaction.message.guild.members.cache.get(user.id).roles.add("732275209557639288");
-    }
-    if (reaction.emoji.id === '730194012467888149'){
-        await reaction.message.guild.members.cache.get(user.id).roles.add("732275274854694942");
-    }
-}})
 
 //remove role via reaction
 client.on('messageReactionRemove', async (reaction, user) => {
