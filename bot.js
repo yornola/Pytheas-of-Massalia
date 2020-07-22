@@ -137,6 +137,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
     if (user.bot) return;
     if (!reaction.message.guild) return;
     if (reaction.message.channel.id === "729830743261446284") {
+        console.log('channel')
         if (reaction.emoji.id === ':white_check_mark:'){
             console.log('emoji')
             await reaction.message.guild.members.cache.get(user.id).roles.add("729980664807424040");
@@ -148,6 +149,7 @@ if (reaction.partial) await reaction.fetch();
 if (user.bot) return;
 if (!reaction.message.guild) return;
 if (reaction.message.channel.id === "730922895148187679") {
+    console.log('channel server commands')
     if (reaction.emoji.id === '729747365824823316'){
         await reaction.message.guild.members.cache.get(user.id).roles.add("732274986311745637");
     }
